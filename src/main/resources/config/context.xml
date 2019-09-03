@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+ 
+  <bean id="testController" class="com.jellard.controller.TestController">
+    <property name="studentService"><ref bean="studentService"/></property>
+    <property name="teacherService"><ref bean="teacherService"/></property>
+  </bean>
+  <bean id="studentService" class="com.jellard.service.impl.StudentServiceImpl">
+     <property name="defaultPort" value="192.168.1.18:9000"></property>
+  </bean>
+  <bean id="teacherService" class="com.jellard.service.impl.TeacherServiceImpl"></bean>
+</beans>
